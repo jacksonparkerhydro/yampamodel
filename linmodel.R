@@ -84,7 +84,7 @@ test$Q_pred <- exp(test$Q_log_pred) - 1
 test$Q_log_pred <- as.numeric(predict(lmtrained, newdata = test))
 test$Q_pred <- exp(test$Q_log_pred) - 1
 
-# dates + validity mask (this is the #1 thing that breaks plots)
+# dates + validity mask
 x <- as.Date(test$DateSpine, format = "%m/%d/%Y")
 
 ok <- complete.cases(x, test$Q_log, test$Q_log_pred, test$Q, test$Q_pred) &
@@ -97,14 +97,13 @@ if (sum(ok) < 2) {
   ))
 }
 
-# metrics you requested
 # RMSE in log scale (log1p space)
 rmse_log <- sqrt(mean((test$Q_log_pred[ok] - test$Q_log[ok])^2))
 
 # model R^2 (from training fit)
 model_r2_adj <- summary(lmtrained)$adj.r.squared
 
-# prediction R^2 (out-of-sample, WY2024, log1p space)
+# prediction R^2 (out-of-sample, WY2024, log1p)
 pred_r2_log <- 1 - sum((test$Q_log_pred[ok] - test$Q_log[ok])^2) /
   sum((test$Q_log[ok] - mean(test$Q_log[ok]))^2)
 
@@ -114,7 +113,6 @@ metrics_txt <- paste0(
   "\nRMSE (WY2024, log1p) = ", sprintf("%.3f", rmse_log)
 )
 
-# plot limits/ticks (log y)
 ymin <- min(c(test$Q[ok], test$Q_pred[ok]))
 ymax <- max(c(test$Q[ok], test$Q_pred[ok]))
 ylim <- c(ymin, ymax * 1.3)
@@ -122,7 +120,6 @@ ylim <- c(ymin, ymax * 1.3)
 yticks <- c(50, 100, 250, 500, 1000, 2500, 5000, 10000, 20000)
 yticks <- yticks[yticks >= ylim[1] & yticks <= ylim[2]]
 
-# make sure the text fits (slightly larger top margin)
 op <- par(no.readonly = TRUE)
 par(mar = c(5, 4, 4, 2) + 0.1)
 
@@ -163,5 +160,6 @@ legend(
   bty = "n",
   cex = 0.9
 )
+
 
 
