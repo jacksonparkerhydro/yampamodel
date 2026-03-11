@@ -3,8 +3,8 @@ graphics.off()
 
 # File paths
 
-gee_file <- "C:\\Users\\jacks\\Downloads\\YAMPAFLOW\\YAMPAFLOWBETTER\\OperationalData\\OperationalDaymet.csv"
-q_file   <- "C:\\Users\\jacks\\Downloads\\YAMPAFLOW\\YAMPAFLOWBETTER\\OperationalData\\operationalwater.csv"
+gee_file <- "YOUR PATH HERE"
+q_file   <- "YOUR PATH HERE"
 
 # Plot colors
 
@@ -403,3 +403,4 @@ plot_holdout(res_2010)
 plot_holdout(res_2012)
 plot_holdout(res_2023)
 plot_holdout(res_2024)
+
