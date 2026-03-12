@@ -23,6 +23,7 @@ downloaded from GEE and USGS.
 MODEL
 
 This linear regression model predicts log CFS using:
+    
     -7 day change in snowpack (dSWE) across three equal area elevation bands in the Yampa River 
     basin (calculated within GEE code)
     
