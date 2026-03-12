@@ -39,11 +39,16 @@ When predicted vs observed is run, it specifically holds the specified test year
 recalculates the model to avoid leakage. 
 
 For each year reported, the program will calculate: 
-    Nash-Suttcliffe Efficiency(NSE)
-    Kling-Gupta Efficiency(KGE)
-    Log-space RMSE
-    PBIAS as a seasonal volume
-    Volume ratio predicted vs. observed
+    
+    -Nash-Suttcliffe Efficiency(NSE)
+    
+    -Kling-Gupta Efficiency(KGE)
+    
+    -Log-space RMSE
+    
+    -PBIAS as a seasonal volume
+    
+    -Volume ratio predicted vs. observed
 
   The graph will display as such:
 
