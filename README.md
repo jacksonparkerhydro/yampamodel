@@ -61,7 +61,7 @@ Being a snowmelt-dominant basin, the Yampa River is reliant on April-June freshe
 for its peak streamflow each year. The most extreme years show that high water years (2023) 
 can prove challenging in terms of predicting the full magnitude of the spring melt pulse. 
 In contrast, low snowpack years with anomalous runoff efficiency (2012) show that this model 
-does not account for the important predictors for dry years. However, for most typical snowpack 
+does not account for all important predictors in dry years. However, for most typical snowpack 
 years, this model performs excellently with KGE and NSE close to or above 0.9, and PBIAS close to 
 +-10% after volume correction. 
 
